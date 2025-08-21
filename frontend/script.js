@@ -1,15 +1,15 @@
-// const apiKey = "74a306562fe2ccbe8ce63aa8ec2eecc8";
 let year = "2025";
 // const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=${apiKey}&year=${year}`;
 
 const content = document.getElementById("content");
 const moviePosterUrl = `https://image.tmdb.org/t/p/w500/`;
+const backend_api = ""
 
 // get selected year from dropdown
 const yearSelected = document.getElementById("year");
 
 async function displayMovies(year) {
-  const response = await fetch(`http://localhost:5000/api/movies?year=${year}`);
+  const response = await fetch(`${BACKEND_API}/api/movies?year=${year}`);
   const movies = await response.json();
   // clear old data base on filters
   content.innerHTML = "";
