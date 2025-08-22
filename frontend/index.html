@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie App (TMDb API)</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="miri004.png" type="image/x-icon">
+    <link rel="shortcut icon" href="miri004.png" type="image/x-icon" />
   </head>
   <body>
     <nav>
@@ -23,6 +23,13 @@
       </div>
     </nav>
     <div class="content" id="content"></div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="close">&times;</span>
+        <div id="movie-details"></div>
+      </div>
+    </div>
+
     <script src="config.js"></script>
     <script src="script.js"></script>
   </body>
