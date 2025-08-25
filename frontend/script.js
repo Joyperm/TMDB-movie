@@ -3,7 +3,7 @@ let year = "2025";
 
 const content = document.getElementById("content");
 const moviePosterUrl = `https://image.tmdb.org/t/p/w500/`;
-const backend_api = "http://localhost:5000";
+// const backend_api = "http://localhost:5000";
 // modal
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("close");
@@ -13,8 +13,8 @@ const movieDetailsContainer = document.getElementById("movie-details");
 const yearSelected = document.getElementById("year");
 
 async function displayMovies(year) {
-  // const response = await fetch(`${BACKEND_API}/api/movies?year=${year}`);
-  const response = await fetch(`${backend_api}/api/movies?year=${year}`);
+  const response = await fetch(`${BACKEND_API}/api/movies?year=${year}`);
+  // const response = await fetch(`${backend_api}/api/movies?year=${year}`); //for testing local
   const movies = await response.json();
   // clear old data base on filters
   content.innerHTML = "";
@@ -33,7 +33,7 @@ async function displayMovies(year) {
     movieElement.appendChild(title);
     movieElement.appendChild(image);
     content.appendChild(movieElement);
-    console.log(movies);
+    // console.log(movies);
 
     movieElement.addEventListener("click", async () => {
       const movieID = data.id;
@@ -72,13 +72,13 @@ async function displayMovies(year) {
 }
 
 async function displayMovieDetails(id) {
-  const response = await fetch(`${backend_api}/api/movie/${id}`);
+  const response = await fetch(`${BACKEND_API}/api/movie/${id}`);
   const movie = await response.json();
   return movie; // now returns full movie object
 }
 
 async function displayMovieTrailer(id) {
-  const response = await fetch(`${backend_api}/api/movie/trailer/${id}`);
+  const response = await fetch(`${BACKEND_API}/api/movie/trailer/${id}`);
   const data = await response.json();
 
   if (data.results && data.results.length > 0) {

@@ -33,4 +33,3 @@ A is a simple movie application that fetches movie data from the **TMDb API** an
 ## Future Improvements
 - Add **search by movie title**.  
 - Implement **pagination** for large results.  
-- Include **movie details** modal or page.
