@@ -204,3 +204,24 @@ h1 {
   font-size: 28px;
   cursor: pointer;
 }
+
+
+/* Loading */
+#loading {
+  display: none;
+  text-align: center;
+  margin: 20px;
+}
+#loading::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #ff6600;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
