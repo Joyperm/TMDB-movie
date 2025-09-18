@@ -73,7 +73,7 @@ const yearSelected = document.getElementById("year");
 
 async function displayMovies(year) {
   // Show loading
-  const loading = document.getElementById("loading");
+  const loading = document.getElementById("loader");
   loading.style.display = "block";
   content.innerHTML = ""; // clear old content
 
